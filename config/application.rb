@@ -2,7 +2,7 @@ require_relative 'boot'
 
 require 'rails/all'
 
-Rails.application.configure do
+CurvaProto2::Application.configure do
   config.assets.initialize_on_precompile = false
 end
 # Require the gems listed in Gemfile, including any gems
