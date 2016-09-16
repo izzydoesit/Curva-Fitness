@@ -1,0 +1,19 @@
+current directory: /Users/user/Documents/workspace/curva_proto2/vendor/bundle/ruby/2.3.0/gems/byebug-9.0.5/ext/byebug
+/Users/user/.rbenv/versions/2.3.1/bin/ruby -r ./siteconf20160906-70874-12ukpde.rb extconf.rb
+creating Makefile
+
+current directory: /Users/user/Documents/workspace/curva_proto2/vendor/bundle/ruby/2.3.0/gems/byebug-9.0.5/ext/byebug
+make "DESTDIR=" clean
+
+current directory: /Users/user/Documents/workspace/curva_proto2/vendor/bundle/ruby/2.3.0/gems/byebug-9.0.5/ext/byebug
+make "DESTDIR="
+compiling breakpoint.c
+compiling byebug.c
+compiling context.c
+compiling locker.c
+compiling threads.c
+linking shared-object byebug/byebug.bundle
+
+current directory: /Users/user/Documents/workspace/curva_proto2/vendor/bundle/ruby/2.3.0/gems/byebug-9.0.5/ext/byebug
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 byebug.bundle ./.gem.20160906-70874-npxasm/byebug

@@ -1,0 +1,15 @@
+current directory: /Users/user/Documents/workspace/curva_proto2/vendor/bundle/ruby/2.3.0/gems/websocket-driver-0.6.4/ext/websocket-driver
+/Users/user/.rbenv/versions/2.3.1/bin/ruby -r ./siteconf20160906-70874-bpohkx.rb extconf.rb
+creating Makefile
+
+current directory: /Users/user/Documents/workspace/curva_proto2/vendor/bundle/ruby/2.3.0/gems/websocket-driver-0.6.4/ext/websocket-driver
+make "DESTDIR=" clean
+
+current directory: /Users/user/Documents/workspace/curva_proto2/vendor/bundle/ruby/2.3.0/gems/websocket-driver-0.6.4/ext/websocket-driver
+make "DESTDIR="
+compiling websocket_mask.c
+linking shared-object websocket_mask.bundle
+
+current directory: /Users/user/Documents/workspace/curva_proto2/vendor/bundle/ruby/2.3.0/gems/websocket-driver-0.6.4/ext/websocket-driver
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 websocket_mask.bundle ./.gem.20160906-70874-m8yoqg
