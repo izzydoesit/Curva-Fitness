@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
+  devise_for :users
   get '/shop' => 'shop#index'
+  get '/shop/clear' => 'shop#clearCart'
+  get '/shop/:id' => 'shop#add'
 
   resources :products
 
