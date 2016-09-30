@@ -1,21 +1,21 @@
-require 'stripe'
+# require 'stripe'
 
-Stripe.api_key = "sk_test_ZqFkKvLmkh0W286o5gwEQWWk"
+# Stripe.api_key = "sk_test_ZqFkKvLmkh0W286o5gwEQWWk"
 
-# Get the credit card details submitted by the form
-token = params[:stripeToken]
+# # Get the credit card details submitted by the form
+# token = params[:stripeToken]
 
-# Create a charge: this will charge the user's card
-begin
-  charge = Stripe::Charge.create(
-    :amount => 1000, # Amount in cents
-    :currency => "usd",
-    :source => token,
-    :description => "Example charge"
-  )
-rescue Stripe::CardError => e
-  # The card has been declined
-end
+# # Create a charge: this will charge the user's card
+# begin
+#   charge = Stripe::Charge.create(
+#     :amount => 1000, # Amount in cents
+#     :currency => "usd",
+#     :source => token,
+#     :description => "Example charge"
+#   )
+# rescue Stripe::CardError => e
+#   # The card has been declined
+# end
 
 # class StripeAdaper
 #   include HTTParty
