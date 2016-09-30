@@ -26,5 +26,16 @@
   <% end %>
 
   <p><b>TOTAL: <%= number_to_currency(total, unit: '$') %></b></p>
-  <%= button_tag "Checkout" %>
+  
+  <form action="/your-server-side-code" method="POST">
+  <script
+    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+    data-key="pk_test_weW0bGcQ4yv9sWSS5bW54XrW"
+    data-amount="999"
+    data-name="Demo Site"
+    data-description="Widget"
+    data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+    data-locale="auto">
+  </script>
+</form>
 </ul>
