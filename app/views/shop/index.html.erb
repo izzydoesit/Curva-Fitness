@@ -20,8 +20,11 @@
       <p><%= link_to product.title, product %></p>
       <p><%= product.description %></p>
       <p><%= number_to_currency(product.price, unit: '$' ) %></p>
+      <p>Qty: <%= quantity %></p>
     </li>
+    <% total += quantity * product.price %>
   <% end %>
 
+  <p><b>TOTAL: <%= number_to_currency(total, unit: '$') %></b></p>
   <%= button_tag "Checkout" %>
 </ul>
