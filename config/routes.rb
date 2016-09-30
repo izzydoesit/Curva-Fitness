@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get '/shop' => 'shop#index'
+
+  resources :products
+
   root 'static_pages#home'
 
   get 'static_pages/about'
@@ -11,7 +15,7 @@ Rails.application.routes.draw do
 
   get 'static_pages/schedule'
 
-  get 'static_pages/store'
+  get 'static_pages/shop'
 
   get 'static_pages/training'
 
