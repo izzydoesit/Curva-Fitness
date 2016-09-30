@@ -30,7 +30,7 @@ gem 'devise'
 gem 'awesome_print'
 gem 'faker'
 gem 'httparty'
-gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+gem 'stripe'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
