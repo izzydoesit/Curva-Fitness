@@ -3,13 +3,13 @@
     <nav class="tm-navbar uk-navbar">
                 <div class="uk-container uk-container-center">
                     <!-- START Logo -->
-                    <a class="tm-logo" href="index-2.html">
+                    <a class="tm-logo" href="/">
                         <span class="color-1">Curva</span><span class="color-2">Fit</span>
                     </a>
                     <!-- END Logo -->
                     <ul class="uk-navbar-nav uk-hidden-small">
                         <li class="uk-parent uk-active" data-uk-dropdown="{}" aria-haspopup="true" aria-expanded="false">
-                            <a href="index-2.html">Home</a>
+                            <%= link_to "Home", root_path %>
                             <div class="uk-dropdown uk-dropdown-navbar uk-dropdown-width-1">
                                 <div class="uk-grid uk-dropdown-grid">
                                     <div class="uk-width-1-1">
@@ -31,10 +31,15 @@
                                 </div>
                             </div>
                         </li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="schedule.html">Schedule</a></li>
+                        
+                            <li>
+                                <%= link_to "About", static_pages_about_path %>
+                            </li>
+                            <li>
+                                <%= link_to "Schedule", static_pages_schedule_path %>
+                            </li>
                         <li class="uk-parent" data-uk-dropdown="{}" aria-haspopup="true" aria-expanded="false">
-                            <a href="classes.html">Classes</a>
+                            <%= link_to "Training", static_pages_training_path %>
                             <div class="uk-dropdown uk-dropdown-navbar uk-dropdown-width-2">
                                 <div class="uk-grid uk-dropdown-grid">
                                     <div class="uk-width-1-2">
@@ -60,11 +65,18 @@
                                 </div>
                             </div>
                         </li>
-                        <li><a href="workouts.html">Ketogenics</a></li>
-                        <li><a href="gallery.html">Blog</a></li>
-                        <li><a href="trainers.html">Training</a></li>
-                        <li><a href="contacts.html">Contact</a></li>
-                        <li><a href="store.html">Store</a></li>
+                        <li><%= link_to "Ketogenics", static_pages_ketogenics_path %></li>
+                        <li><%= link_to "Blog", static_pages_blog_path %></li>
+                        <li><%= link_to "Shop", products_path %><li>
+                        <% if user_signed_in? %>
+                            <li>
+                                <%= link_to "Log Out", destroy_user_session_path, method: :delete%>
+                            </li>
+                        <% else %>
+                            <li><%= link_to "Log In", new_user_session_path %></li>
+                            <li><%= link_to "Sign Up", new_user_registration_path %></li>
+                        <% end %>
+                        
                     </ul>
                     <a href="#offcanvas" class="uk-navbar-toggle uk-visible-small" data-uk-offcanvas=""></a>
                 </div>
