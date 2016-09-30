@@ -1,2 +1,17 @@
-<h1>Shop#index</h1>
-<p>Find me in app/views/shop/index.html.erb</p>
+<br><br><br><br>
+
+<h1>Your Cart</h1>
+<%= link_to 'Empty Your Cart', shop_clear_path %>
+
+<ul>
+  <% @cart.each do |id, quantity| %>
+    <% product = Product.find(id) %>
+    <li>
+      <p><%= link_to product.title, product %></p>
+      <p><%= product.description %></p>
+      <p><%= number_to_currency(product.price, unit: '$' ) %></p>
+      <p><%= product.category %></p>
+    </li>
+
+  <% end %>
+</ul>
