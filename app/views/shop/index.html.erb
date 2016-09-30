@@ -1,7 +1,17 @@
 <br><br><br><br>
+<div class="center"> 
+  <h1>Your Cart</h1>
+</div>
 
-<h1>Your Cart</h1>
-<%= link_to 'Empty Your Cart', shop_clear_path %>
+<% if @cart.empty? %>
+  <p>Your Cart is Empty</p>
+<% else %>
+  <%= link_to 'Empty Your Cart', shop_clear_path %>
+<% end %>
+
+<br><br><br>
+
+<% total = 0 %>
 
 <ul>
   <% @cart.each do |id, quantity| %>
@@ -10,8 +20,8 @@
       <p><%= link_to product.title, product %></p>
       <p><%= product.description %></p>
       <p><%= number_to_currency(product.price, unit: '$' ) %></p>
-      <p><%= product.category %></p>
     </li>
-
   <% end %>
+
+  <%= button_tag "Checkout" %>
 </ul>
