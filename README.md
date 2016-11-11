@@ -1,7 +1,7 @@
 # Curva Fit
 
 Rails eCommerce application that allows users to learn about ketogenics, shop for ketogenic supplement, and sign up for a personal training session [LIVE](https://boiling-savannah-21011.herokuapp.com/)
-![homepage](https://boiling-savannah-2)
+![homepage](https://www.bitbucket.org/everysum1/curva_proto2/raw/master/app/assets/images/Curva\ Homepage\ 1.png)
 
 ## Getting Started
 
