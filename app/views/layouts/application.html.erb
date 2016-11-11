@@ -12,8 +12,11 @@
   <body>
     <div class="ak-page">
       <%= render 'layouts/header' %>
-      
+
         <%= yield %>
+
+        <%= render 'layouts/mobile_menu' %>      
+        <%= render 'layouts/social' %>
         <%= render 'layouts/footer' %>
       
     </div>

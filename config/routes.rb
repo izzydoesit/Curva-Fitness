@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+
+  devise_for :users
+  
+  get '/cart' => 'shop#index'
+  get '/cart/clear' => 'shop#clearCart'
+  get '/cart/:id' => 'shop#add'
+
+  resources :products
+  resources :charges
+
   root 'static_pages#home'
 
   get 'static_pages/about'
@@ -11,7 +21,7 @@ Rails.application.routes.draw do
 
   get 'static_pages/schedule'
 
-  get 'static_pages/store'
+  get 'static_pages/shop'
 
   get 'static_pages/training'
 
