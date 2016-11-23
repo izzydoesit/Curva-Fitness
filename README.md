@@ -1,6 +1,8 @@
 # Curva Fit
 
-Get CURVA fit today! This Rails eCommerce application, made for a local SF fitness business, allows users to learn about ketogenics, sign up for the mailing list, shop for ketogenic supplements, and sign up for a personal or group training session. 
+Get CURVA fit today! 
+
+This Rails eCommerce application, made for a local SF fitness business, allows users to learn about ketogenics, sign up for the mailing list, shop for ketogenic supplements and fitness gear, as well as sign up for a personal or group training session. 
 
 ![homepage](https://github.com/everysum1/curva_proto2/blob/master/app/assets/images/CurvaHomepage1.png)
 
