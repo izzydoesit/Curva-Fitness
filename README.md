@@ -1,6 +1,7 @@
 # Curva Fit
 
 Rails eCommerce application that allows users to learn about ketogenics, shop for ketogenic supplement, and sign up for a personal training session [LIVE](https://boiling-savannah-21011.herokuapp.com/)
+
 ![homepage](https://github.com/everysum1/curva_proto2/blob/master/app/assets/images/CurvaHomepage1.png)
 
 ## Getting Started
@@ -44,15 +45,13 @@ heroku open
 
 ## Built With
 
-* [Ruby on Rails](http://api.rubyonrails.org/) - Backend API framework used
+* [Ruby on Rails](http://api.rubyonrails.org/) - Primary framework used
 * [React](https://facebook.github.io/react) - Front end UI plugin used
+* [Spree](https://spreecommerce.com) - Shopping cart solution
+* [Stripe](https://stripe.com) - Payments API used
+* [Booking Bug](https://www.bookingbug.com) - Scheduling API used
 * [PostgreSQL](https://www.postgresql.org/docs/) - Database used
 * [HTTParty](https://github.com/jnunemaker/httparty) - Library used for making HTTP requests
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
 
 ## Authors
 
