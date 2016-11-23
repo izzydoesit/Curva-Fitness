@@ -29,6 +29,7 @@ Then run bundle command to install all dependencies and run the server.
 $ bundle install
 $ rails server
 ```
+then visit 'localhost:8000' in your browser
 
 
 ## Running ALL the tests
