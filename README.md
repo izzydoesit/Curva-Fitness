@@ -35,13 +35,18 @@ then visit 'localhost:8000' in your browser
 ## Running ALL the tests
 
 ```
-bundle exec rspec spec
+$ bundle exec rspec spec
 ```
 
 ## Deployment
 
+You must have Heroku CLI installed and be logged in to Heroku in order to deploy live via Heroku servers (Please see the documentation to get set up with Heroku)
+
+Then, after installation and login, via the command line...
 ```
-heroku open
+$ heroku create 
+$ git push heroku master
+$ heroku open
 ```
 
 ## Built With
