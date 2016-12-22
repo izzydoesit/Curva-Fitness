@@ -3,8 +3,6 @@ ruby '2.3.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
-# Use sqlite3 as the database for Active Record
-# gem 'pg', '0.18.4'
 # Use Puma as the app server
 gem 'puma', '3.4'
 # Use SCSS for stylesheets
@@ -25,19 +23,18 @@ gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
-gem 'bcrypt', '~> 3.1.7'
-gem 'react-rails'
 # gem 'bcrypt', '~> 3.1.7'
+
 gem 'devise'
 gem 'awesome_print'
 gem 'faker'
-gem 'httparty'
-gem 'stripe'
+gem 'savon', '~> 2.11.0'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
+  # Use sqlite3 as the database for Active Record
   gem 'sqlite3', '1.3.11'
   gem 'dotenv'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -54,7 +51,7 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
-group :production do 
+group :production do
   gem 'pg', '0.18.4'
 end
 
