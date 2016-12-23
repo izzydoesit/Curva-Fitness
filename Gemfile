@@ -29,6 +29,7 @@ gem 'devise'
 gem 'awesome_print'
 gem 'faker'
 gem 'savon', '~> 2.11.0'
+gem 'mindbody-api'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
