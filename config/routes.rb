@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   devise_for :users
   
-  get '/shop' => 'static_pages#shop'
+  get '/shop' => 'shop#index'
   get '/cart' => 'cart#index'
   get '/cart/clear' => 'cart#clearCart'
   get '/cart/:id' => 'cart#add'
