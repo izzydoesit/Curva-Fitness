@@ -5,3 +5,28 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+products = [
+  ["Iron Maxx", "Protein 90"],
+  ["NuTrend", "Multi-mineral Aquamin"],
+  ["USN", "Casein Protein"],
+  ["Dymatize Elite", "Whey Protein Isolate"]
+]
+
+images = [
+  "demo/shop/product-1.jpg",
+  "demo/shop/product-2.jpg",
+  "demo/shop/product-3.jpg",
+  "demo/shop/product-4.jpg"
+]
+
+products.each_with_index do |twople, idx|
+  Product.create({
+    brand: twople.first,
+    name: twople.last,
+    description: Faker::Hipster.sentence,
+    image_url: images[idx],
+    price: 24.99,
+    category: "Nutrition"
+  })
+end
