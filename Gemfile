@@ -28,8 +28,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'awesome_print'
 gem 'faker'
-gem 'savon', '~> 2.11.0'
-gem 'mindbody-api'
+gem 'square_connect'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
