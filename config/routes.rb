@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   get '/cart' => 'shop#index'
   get '/cart/clear' => 'shop#clearCart'
   get '/cart/:id' => 'shop#add'
-  get '/mindbody' => 'mindbody#index'
 
   resources :products
   resources :charges
