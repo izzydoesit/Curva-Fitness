@@ -1,7 +1,8 @@
 <div class="center container"> 
   <h1>Your Cart</h1>
-  
 </div>
+
+<%= link_to "<-- BACK TO SHOP", shop_path %>
 
 <% if @cart.empty? %>
   <p>Your Cart is Empty</p>
@@ -17,14 +18,16 @@
   <% @cart.each do |id, quantity| %>
     <% product = Product.find(id) %>
     <li>
-      <p><%= link_to product.title, product %></p>
+      <%= image_tag(product.image_url) %>
+      <p><%= link_to product.brand + product.name, product %></p>
       <p><%= product.description %></p>
       <p><%= number_to_currency(product.price, unit: '$' ) %></p>
       <p>Qty: <%= quantity %></p>
+      <%= link_to "REMOVE FROM CART", "/cart/#{product.id}/remove" %>
     </li>
     <% total += quantity * product.price %>
   <% end %>
 
   <p><b>TOTAL: <%= number_to_currency(total, unit: '$') %></b></p>
-  <a href="/charges/new"><%= button_tag "Checkout" %></a>
+  <%= link_to "Checkout", '/checkout' %>
 </ul>
