@@ -4,15 +4,15 @@
 
     <div class="productCard card">
 
-      <%= image_tag(product.image_url, class: "card-img-top", style: "width: 295; height: 500") %>
+      <%= image_tag(product.image_url, class: "card-img-top") %>
       
       <div class="card-body">
         <h2 class="card-title"><%= product.brand %></h2>
         <h2 class="card-title"><%= product.name %></h2>
         <h3 class="card-text"><%= product.price %></h3>
       </div>
-
-      <input class="btn btn-primary btn-lg" type="submit" value="+ ADD TO CART">
+      
+      <a href=<%= "/cart/#{product.id}"%> class="btn btn-primary btn-lg active" role="button">+ ADD TO CART</a>
 
     </div>
   <% end %>
