@@ -48,4 +48,48 @@ class CartController < ApplicationController
       @cart = {}
     end
   end
+
+  def process_payment
+    # Assume you have correct values assigned to the following variables:
+   
+    NONCE = params[:nonce]
+    LOCATION_ID = ENV['SQUARE_LOCATION_ID']
+    ACCESS_TOKEN = ENV['SQUARE_ACCESS_TOKEN']
+
+    # Setup authorization
+    SquareConnect.configure do |config|
+      config.access_token = ACCESS_TOKEN
+    end
+
+    transactions_api = SquareConnect::TransactionsApi.new
+
+    request_body = {
+
+      :card_nonce => NONCE,
+
+      # Monetary amounts are specified in the smallest unit of the applicable currency.
+      # This amount is in cents. It's also hard-coded for $1, which is not very useful.
+      :amount_money => {
+        :amount => 100,
+        :currency => 'USD'
+      },
+
+      # Every payment you process for a given business have a unique idempotency key.
+      # If you're unsure whether a particular payment succeeded, you can reattempt
+      # it with the same idempotency key without worrying about double charging
+      # the buyer.
+      :idempotency_key => SecureRandom.uuid
+    }
+
+
+    # The SDK throws an exception if a Connect endpoint responds with anything besides 200 (success).
+    # This block catches any exceptions that occur from the request.
+    begin
+      resp = transactions_api.charge(LOCATION_ID, request_body)
+    rescue SquareConnect::ApiError => e
+      raise "Error encountered while charging card: #{e.message}"
+    end
+
+    puts resp
+  end
 end
