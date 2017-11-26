@@ -29,7 +29,7 @@ gem 'devise'
 gem 'dotenv-rails', :require => 'dotenv/load'
 gem 'awesome_print'
 gem 'faker'
-gem 'square_connect'
+gem 'square_connect', :git => 'https://github.com/square/connect-ruby-sdk.git'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
