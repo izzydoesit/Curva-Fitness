@@ -33,13 +33,13 @@
                         </li>
                         
                         <li>
-                            <%= link_to "About", static_pages_about_path %>
+                            <%= link_to "About", about_path %>
                         </li>
                         <li>
-                            <%= link_to "Schedule", static_pages_schedule_path %>
+                            <%= link_to "Schedule", schedule_path %>
                         </li>
                         <li class="uk-parent" data-uk-dropdown="{}" aria-haspopup="true" aria-expanded="false">
-                            <%= link_to "Training", static_pages_training_path %>
+                            <%= link_to "Training", training_path %>
                             <div class="uk-dropdown uk-dropdown-navbar uk-dropdown-width-2">
                                 <div class="uk-grid uk-dropdown-grid">
                                     <div class="uk-width-1-2">
@@ -65,8 +65,8 @@
                                 </div>
                             </div>
                         </li>
-                        <li><%= link_to "Ketogenics", static_pages_ketogenics_path %></li>
-                        <li><%= link_to "Blog", static_pages_blog_path %></li>
+                        <li><%= link_to "Ketogenics", ketogenics_path %></li>
+                        <li><%= link_to "Blog", blog_path %></li>
                         <li><%= link_to "Shop", shop_path %><li>
                         <% if user_signed_in? %>
                             <li>

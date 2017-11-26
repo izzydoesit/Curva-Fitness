@@ -14,17 +14,17 @@ Rails.application.routes.draw do
 
   root 'static_pages#home'
 
-  get 'static_pages/about'
+  get '/about' => 'static_pages#about'
 
-  get 'static_pages/blog'
+  get '/blog' => 'static_pages#blog'
 
-  get 'static_pages/classes'
+  get '/classes' => 'static_pages#classes'
 
-  get 'static_pages/ketogenics'
+  get '/ketogenics' => 'static_pages#ketogenics'
 
-  get 'static_pages/schedule'
+  get '/schedule' => 'static_pages#schedule'
 
-  get 'static_pages/training'
+  get '/training' => 'static_pages#training'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
