@@ -52,20 +52,21 @@ class CartController < ApplicationController
   def process_payment
     # Assume you have correct values assigned to the following variables:
    
-    NONCE = params[:nonce]
-    LOCATION_ID = ENV['SQUARE_LOCATION_ID']
-    ACCESS_TOKEN = ENV['SQUARE_ACCESS_TOKEN']
+    nonce = params[:nonce]
+    location_id= ENV['SQUARE_LOCATION_ID']
+    access_token = ENV['SQUARE_ACCESS_TOKEN']
+    # AMOUNT = params[:total]
 
     # Setup authorization
     SquareConnect.configure do |config|
-      config.access_token = ACCESS_TOKEN
+      config.access_token = access_token
     end
 
     transactions_api = SquareConnect::TransactionsApi.new
 
     request_body = {
 
-      :card_nonce => NONCE,
+      :card_nonce => nonce,
 
       # Monetary amounts are specified in the smallest unit of the applicable currency.
       # This amount is in cents. It's also hard-coded for $1, which is not very useful.
@@ -85,11 +86,13 @@ class CartController < ApplicationController
     # The SDK throws an exception if a Connect endpoint responds with anything besides 200 (success).
     # This block catches any exceptions that occur from the request.
     begin
-      resp = transactions_api.charge(LOCATION_ID, request_body)
+      resp = transactions_api.charge(location_id, request_body)
     rescue SquareConnect::ApiError => e
       raise "Error encountered while charging card: #{e.message}"
     end
 
     puts resp
+
+    redirect_to :show
   end
 end
