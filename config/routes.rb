@@ -8,9 +8,9 @@ Rails.application.routes.draw do
   get '/cart/:id' => 'cart#add'
   get '/cart/:id/remove' => 'cart#remove'
   get '/checkout' => 'cart#checkout'
+  post '/checkout' => 'cart#process_payment'
 
   resources :products
-  resources :charges
 
   root 'static_pages#home'
 
