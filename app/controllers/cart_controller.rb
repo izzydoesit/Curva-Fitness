@@ -16,7 +16,7 @@ class CartController < ApplicationController
     else
       cart[id] = 1
     end
-    redirect_to action: :index
+    redirect_to action: :show
   end
 
   def remove
@@ -33,15 +33,15 @@ class CartController < ApplicationController
     else
       cart.delete(id)
     end
-    redirect_to action: :index
+    redirect_to action: :show
   end
 
   def clearCart
     session[:cart] = nil
-    redirect_to action: :index
+    redirect_to action: :show
   end
 
-  def index
+  def show
     if session[:cart]
       @cart = session[:cart]
     else
