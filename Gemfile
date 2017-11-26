@@ -26,7 +26,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 
 gem 'devise'
-gem 'dotenv-rails'
+gem 'dotenv-rails', :require => 'dotenv/load'
 gem 'awesome_print'
 gem 'faker'
 gem 'square_connect'
