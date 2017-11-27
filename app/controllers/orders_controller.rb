@@ -1,6 +1,7 @@
 class OrdersController < ApplicationController
 
-  def charge_card
+  def create
+    
     @current_order = current_order
     
     SquareConnect.configure do |config|
@@ -10,7 +11,7 @@ class OrdersController < ApplicationController
     transactions_api = SquareConnect::TransactionsApi.new
     
     amount = @current_order.total.to_i * 100
-    byebug
+  
     request_body = {
       card_nonce: params["nonce"],
       amount_money: {
@@ -27,17 +28,18 @@ class OrdersController < ApplicationController
       render json: {status: 400, errors: JSON.parse(e.response_body)["errors"]}
       return
     end
-    puts resp
-    transaction_id = resp[:transaction][:tenders].first[:transaction_id]
-    charge_time = resp[:transaction][:created_at]
-    location_id = resp[:transaction][:location_id]
+
+    transaction_id = resp.transaction.tenders[0].transaction_id
+    charge_time = resp.transaction.created_at
+    location_id = resp.transaction.location_id
     current_order.update_columns(
       transaction_id: transaction_id, 
       charged_at: charge_time, 
       location_id: location_id,
       order_status_id: 2
     )
-
+    session[:order_id] = nil
+    flash[:success] = "Your order has been placed!"
     redirect_to :root
   end
 
