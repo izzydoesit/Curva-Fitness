@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Product.delete_all
 products = [
   ["Iron Maxx", "Protein 90"],
   ["NuTrend", "Multi-mineral Aquamin"],
