@@ -1,15 +1,16 @@
 class OrdersController < ApplicationController
 
   def charge_card
-    current_order.calculate_total
-
+    @current_order = current_order
+    
     SquareConnect.configure do |config|
       # Configure OAuth2 access token for authorization: oauth2
       config.access_token = ENV['SQUARE_ACCESS_TOKEN']
     end
     transactions_api = SquareConnect::TransactionsApi.new
     
-    amount = current_order.total.to_i * 100
+    amount = @current_order.total.to_i * 100
+    byebug
     request_body = {
       card_nonce: params["nonce"],
       amount_money: {
