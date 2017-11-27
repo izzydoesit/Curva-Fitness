@@ -1,4 +1,4 @@
-class CartController < ApplicationController
+class CartsController < ApplicationController
 
   before_action :authenticate_user!
 
@@ -42,6 +42,8 @@ class CartController < ApplicationController
   end
 
   def show
+    @order_items = current_order.order_items
+    
     if session[:cart]
       @cart = session[:cart]
     else

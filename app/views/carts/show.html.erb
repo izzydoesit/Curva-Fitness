@@ -4,6 +4,10 @@
 
 <%= link_to "<-- BACK TO SHOP", shop_path %>
 
+<div class="shopping-cart">
+  <%= render "shopping_cart" %>
+</div>
+
 <% if @cart.empty? %>
   <p>Your Cart is Empty</p>
 <% else %>

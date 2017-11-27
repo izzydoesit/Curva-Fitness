@@ -1,17 +1,15 @@
 <% content_for :head do %>
-  <%= javascript_include_tag "https://js.squareup.com/v2/paymentform" %>
-  <%= javascript_include_tag "sqpaymentform.js" %>
-
+  <%= javascript_include_tag "sqpaymentform" %>
 <% end %>
 
+<div class="container" data-env="<%= Rails.env %>">
 
-<div class="container">
   <div id="sq-ccbox">
     <!--
       You should replace the action attribute of the form with the path of
       the URL you want to POST the nonce to (for example, "/process-card")
     -->
-    <form id="nonce-form" novalidate action="path/to/payment/processing/page" method="post">
+    <form id="nonce-form" novalidate action="/orders" method="post">
       Pay with a Credit Card
       <table>
       <tbody>

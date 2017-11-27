@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class CartControllerTest < ActionDispatch::IntegrationTest
+class CartsControllerTest < ActionDispatch::IntegrationTest
   test "should get add" do
     get cart_add_url
     assert_response :success
