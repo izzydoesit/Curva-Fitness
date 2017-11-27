@@ -31,6 +31,13 @@ ActiveRecord::Schema.define(version: 20171126105249) do
   end
 
   create_table "orders", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "address1"
+    t.string   "address2"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zip"
     t.decimal  "subtotal",        precision: 12, scale: 3
     t.decimal  "tax",             precision: 12, scale: 3
     t.decimal  "shipping",        precision: 12, scale: 3
