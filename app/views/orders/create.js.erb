@@ -1,2 +1,9 @@
-<h1>Orders#create</h1>
-<p>Find me in app/views/orders/create.html.erb</p>
+<% if @order.errors.any? || @order_item.errors.any? %>
+  console.log("not valid.")
+  <% @order_item.errors.each do |error| %>
+    <%= puts error%>
+  <% end %>
+
+<% else %>
+  alert("creating order")
+<% end %>

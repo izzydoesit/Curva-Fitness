@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get '/cart/:id/remove' => 'carts#remove'
 
   get '/checkout' => 'carts#checkout'
-  post '/checkout' => 'orders#charge_card'
+  post '/checkout' => 'orders#create'
 
   resources :products, only: [:index, :show]
   resource :cart, only: [:show]
