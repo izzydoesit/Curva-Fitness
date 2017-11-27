@@ -1,11 +1,13 @@
-<div class="center container"> 
-  <h1>Your Cart</h1>
-</div>
+<div class="container">
+  <div class="center"> 
+    <h1>Your Cart</h1>
+  </div>
 
-<%= link_to "<-- BACK TO SHOP", shop_path %>
+  <%= link_to "<-- BACK TO SHOP", shop_path %>
 
-<div class="shopping-cart">
-  <%= render "shopping_cart" %>
+  <div class="shopping-cart">
+    <%= render "shopping_cart" %>
+  </div>
 </div>
 
 <% if @cart.empty? %>
