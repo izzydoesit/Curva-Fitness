@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  get 'orders/create'
+
+  get 'orders/update'
+
+  get 'orders/destroy'
+
   devise_for :users
   
   get '/shop' => 'products#index'
