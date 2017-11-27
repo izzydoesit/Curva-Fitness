@@ -1,25 +1,22 @@
 Rails.application.routes.draw do
 
-  get 'orders/create'
-
-  get 'orders/update'
-
-  get 'orders/destroy'
-
   devise_for :users
   
   get '/shop' => 'products#index'
+ 
   get '/cart' => 'carts#show'
   get '/cart/clear' => 'carts#clearCart'
   get '/cart/:id' => 'carts#add'
   get '/cart/:id/remove' => 'carts#remove'
+
   get '/checkout' => 'carts#checkout'
-  post '/checkout' => 'carts#process_payment'
+  post '/checkout' => 'orders#charge_card'
 
   resources :products, only: [:index, :show]
   resource :cart, only: [:show]
   resources :order_items, only: [:create, :update, :destroy]
-  
+  resources :orders, only: [:charge_card, :create, :udate, :destroy]
+
   root 'static_pages#home'
 
   get '/about' => 'static_pages#about'
