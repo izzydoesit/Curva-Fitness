@@ -8,7 +8,7 @@ class OrderItemsController < ApplicationController
       @order_item = already_in_cart.first
       @order_item.update_attributes(quantity: @order_item.quantity + params["order_item"]["quantity"].to_i)
     else
-      @order_item = @order.order_items.build(order_item_params)
+      @order_item = @order.order_items.new(order_item_params)
     end
 
     pp @order
