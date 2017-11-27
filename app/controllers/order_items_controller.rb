@@ -3,10 +3,10 @@ class OrderItemsController < ApplicationController
   def create
     @order = current_order
 
-    already_in_cart = @order.order_items.where(product_id: params["order_item"]["product_id"])
-    if already_in_cart.size > 0
-      @order_item = already_in_cart.first
-      @order_item.update_attributes(quantity: @order_item.quantity + params["order_item"]["quantity"].to_i)
+    existing_order_item = @order.order_items.where(product_id: params["order_item"]["product_id"])
+    if existing_order_item.count > 0
+      @order_item = existing_order_item.last
+      @order_item.update_columns(quantity: @order_item.quantity + params["order_item"]["quantity"].to_i)
     else
       @order_item = @order.order_items.new(order_item_params)
     end
