@@ -1,5 +1,14 @@
 <div class="container">
 
+  <h3 class="text-center">Products for Sale</h3>
+
+  <div id="product-container">
+    <% @products.each do |product| %>
+      <%= render "product_row", product: product, order_item: @order_item %>
+    <% end %>
+  </div>
+
+
   <div class="center">
     <h1>Products</h1>
   </div>
@@ -16,7 +25,6 @@
       <h2 class="card-title"><%= product.name %></h2>
       <h3 class="card-text"><%= product.price %></h3>
       <h4><%= link_to 'Show', product %></h4>
-      <h4><%= link_to 'Edit', edit_product_path(product) %></h4>
       <h4><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></h4>
     </div>
     
@@ -26,7 +34,4 @@
 <% end %>
 
   <br>
-
-  <%= link_to 'New Product', new_product_path %>
-
 </div>
