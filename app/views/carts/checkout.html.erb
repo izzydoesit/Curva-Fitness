@@ -1,5 +1,6 @@
 <% content_for :head do %>
-  <%= javascript_include_tag "sqpaymentform" %>
+  <%= javascript_include_tag "https://js.squareup.com/v2/paymentform", async: false %>
+  <%= javascript_include_tag "sqpaymentform.js" %>
 <% end %>
 
 <div class="container" data-env="<%= Rails.env %>">
