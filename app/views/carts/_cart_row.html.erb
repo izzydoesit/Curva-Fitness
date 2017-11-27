@@ -1,8 +1,9 @@
 <div class="well">
 
     <div class="col-xs-8">
-      <%= image_tag(product.image_url, class: "card-img-top") %><h4 class="card-title"><%= product.brand %></h4>
-      <h4 class="card-title"><%= product.name %></h4>
+      <%= image_tag(product.image_url, class: "card-img-top") %>
+      <h4 class="card-title"><%= link_to product.brand + product.name, product %></h4>
+      <p class="card-text"><%= product.description %></p>
     </div>
     <div class="col-xs-4">
 
