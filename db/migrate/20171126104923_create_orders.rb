@@ -9,9 +9,12 @@ class CreateOrders < ActiveRecord::Migration[5.0]
       t.string :state, allow_blank: true
       t.string :zip, allow_blank: true
       t.decimal :subtotal, precision: 12, scale: 3
-      t.decimal :tax, precision: 12, scale: 3
-      t.decimal :shipping, precision: 12, scale: 3
+      t.decimal :tax, precision: 12, scale: 3, default: 0.00
+      t.decimal :shipping, precision: 12, scale: 3, default: 0.00
       t.decimal :total, precision: 12, scale: 3
+      t.string :charged_at
+      t.string :transaction_id
+      t.string :location_id
       t.references :order_status, foreign_key: true
 
       t.timestamps

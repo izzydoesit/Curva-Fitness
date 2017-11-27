@@ -39,12 +39,15 @@ ActiveRecord::Schema.define(version: 20171126105249) do
     t.string   "state"
     t.string   "zip"
     t.decimal  "subtotal",        precision: 12, scale: 3
-    t.decimal  "tax",             precision: 12, scale: 3
-    t.decimal  "shipping",        precision: 12, scale: 3
+    t.decimal  "tax",             precision: 12, scale: 3, default: "0.0"
+    t.decimal  "shipping",        precision: 12, scale: 3, default: "0.0"
     t.decimal  "total",           precision: 12, scale: 3
+    t.string   "charged_at"
+    t.string   "transaction_id"
+    t.string   "location_id"
     t.integer  "order_status_id"
-    t.datetime "created_at",                               null: false
-    t.datetime "updated_at",                               null: false
+    t.datetime "created_at",                                               null: false
+    t.datetime "updated_at",                                               null: false
     t.index ["order_status_id"], name: "index_orders_on_order_status_id"
   end
 
