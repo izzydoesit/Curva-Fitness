@@ -73,7 +73,7 @@
                                 <%= link_to "Log Out", destroy_user_session_path, method: :delete%>
                             </li>
                             <li>
-                                <%= link_to "#{current_order.order_items.size} Items in Cart ( #{number_to_currency current_order.subtotal} )", cart_path, class: "btn btn-link" %>
+                                <%= link_to "#{current_quantity} Items in Cart ( #{number_to_currency current_order.subtotal} )", cart_path, class: "btn btn-link" %>
                             </li>
                         <% else %>
                             <li><%= link_to "Log In", new_user_session_path %></li>
