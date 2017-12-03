@@ -1,3 +1,47 @@
 // Place all the styles related to the StaticPages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+section {
+    overflow: auto;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.center {
+    text-align: center;
+}
+
+.jumbotron {
+    background: url('demo/workouts/pure-power-workout-bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+    min-height: 30em;
+    position: relative;
+    .founder-headline {
+        position: absolute;
+        right: 0;
+        bottom: 20;
+        h1 {
+            font-size: 7em;
+            margin-bottom: 10px;
+            color: black;
+        }
+        p {
+            margin-bottom: 10px;
+            color: black;
+            font-size: 3em;
+        }
+    }
+}
+
+.founder-blurb {
+    .founder-image {
+        max-width: 48%;
+        display: inline-block;
+    }
+    .founder-text {
+        max-width: 50%;
+        display: inline-block;
+    }
+}
