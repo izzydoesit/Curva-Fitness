@@ -55,9 +55,7 @@ $ heroku open
 
 * [Ruby on Rails](http://api.rubyonrails.org/) - Primary framework used
 * [React](https://facebook.github.io/react) - Front end UI plugin used
-* [Spree](https://spreecommerce.com) - Shopping cart solution
-* [Stripe](https://stripe.com) - Payments API used
-* [Booking Bug](https://www.bookingbug.com) - Scheduling API used
+* [Square](https://squareup.com) - Payments & scheduling API
 * [PostgreSQL](https://www.postgresql.org/docs/) - Database used
 * [HTTParty](https://github.com/jnunemaker/httparty) - Library used for making HTTP requests
 
