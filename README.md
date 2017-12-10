@@ -4,7 +4,7 @@ Get CURVA fit today!
 
 This Rails eCommerce application, made for a local SF fitness business, allows users to learn about ketogenics, sign up for the mailing list, shop for ketogenic supplements and fitness gear, as well as sign up for a personal or group training session. 
 
-![homepage](https://github.com/everysum1/curva_proto2/blob/master/app/assets/images/CurvaHomepage1.png)
+![homepage](https://github.com/izzydoesit/curva_proto2/blob/master/app/assets/images/CurvaHomepage1.png)
 
 ## Getting Started
 
@@ -21,7 +21,7 @@ rails 5.0.0
 ### Installing
 From the command terminal, clone the repository to your local directory...
 ```
-$ git clone https://www.bitbucket.org/everysum1/curva_proto2.git
+$ git clone https://github.com/izzydoesit/curva_proto2.git
 $ cd curva_proto2
 ```
 
@@ -31,7 +31,7 @@ Then run bundle command to install all dependencies and run the server.
 $ bundle install
 $ rails server
 ```
-then visit 'localhost:8000' in your browser
+then visit 'localhost:3000' in your browser
 
 
 ## Running ALL the tests
@@ -61,7 +61,7 @@ $ heroku open
 
 ## Authors
 
-* **Israel Matos** - [Github](https://github.com/everysum1)
+* **Israel Matos** - [Github](https://github.com/izzydoesit)
 
 ## License
 
